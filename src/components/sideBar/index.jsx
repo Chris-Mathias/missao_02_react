@@ -22,7 +22,7 @@ export default function SideBar() {
 
     return (
         <div
-            className={`bg-base-100 transition-all border-r-[1px] border-gray-700 ${
+            className={`absolute bg-base-100 transition-all border-r-[1px] border-gray-700 ${
                 isExpanded ? "w-[300px]" : "w-[76px]"
             }`}
             onMouseEnter={handleMouseEnter}

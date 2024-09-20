@@ -7,8 +7,8 @@ export default function Home() {
         <div>
             <NavBarComp />
             <div className="flex">
-                <SideBarComp />
                 <GridComp />
+                <SideBarComp />
             </div>
         </div>
     );
