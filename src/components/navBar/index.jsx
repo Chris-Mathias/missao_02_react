@@ -1,11 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { useSideBar } from "@/contexts/sideBarContext";
+import Icon from "@/components/icon";
 
 export default function NavBar() {
+    const { toggleExpanded } = useSideBar();
+
     return (
         <div className="navbar bg-base-100 border-b-[1px] border-gray-700">
             <div className="flex-none">
-                <button className="btn btn-circle w-12 h-12 btn-ghost hover:bg-gray-700 mr-3 ml-1">
+                <Icon
+                    onClick={toggleExpanded}
+                    className="mr-3 ml-1"
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -19,9 +26,9 @@ export default function NavBar() {
                             d="M4 6h16M4 12h16M4 18h16"
                         ></path>
                     </svg>
-                </button>
+                </Icon>
             </div>
-            <div className="flex-1 hover:text-green-600 hover:underline">
+            <div className="flex-none hover:text-green-600 hover:underline cursor-pointer">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 579 500"
@@ -38,15 +45,11 @@ export default function NavBar() {
                         y1="295.747"
                         y2="282.634"
                     >
-                        <stop
-                            offset="0"
-                            stop-color="#bf360c"
-                            stop-opacity=".2"
-                        />
+                        <stop offset="0" stopColor="#bf360c" stopOpacity=".2" />
                         <stop
                             offset="1"
-                            stop-color="#bf360c"
-                            stop-opacity=".02"
+                            stopColor="#bf360c"
+                            stopOpacity=".02"
                         />
                     </linearGradient>
                     <radialGradient
@@ -57,8 +60,8 @@ export default function NavBar() {
                         gradientUnits="userSpaceOnUse"
                         r="18.197"
                     >
-                        <stop offset="0" stop-color="#fff" stop-opacity=".1" />
-                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                        <stop offset="0" stopColor="#fff" stopOpacity=".1" />
+                        <stop offset="1" stopColor="#fff" stopOpacity="0" />
                     </radialGradient>
                     <path d="M52.6 52.6h473.7v394.7H52.6z" fill="#0f9d58" />
                     <path
@@ -105,18 +108,19 @@ export default function NavBar() {
                 </svg>
                 <h1 className="text-xl">Google Sala de Aula</h1>
             </div>
+            <div className="flex-1"></div>
             <div className="flex-none">
-                <button className="btn btn-circle w-12 h-12 btn-ghost hover:bg-gray-700">
+                <Icon>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="inline-block h-5 w-5"
                     >
                         <FontAwesomeIcon icon={faPlus} />
                     </svg>
-                </button>
+                </Icon>
             </div>
             <div className="flex-none">
-                <button className="btn btn-circle w-12 h-12 btn-ghost hover:bg-gray-700">
+                <Icon>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="currentColor"
@@ -133,17 +137,17 @@ export default function NavBar() {
                         <path d="M14 19C14 20.1046 13.1046 21 12 21C10.8954 21 10 20.1046 10 19C10 17.8954 10.8954 17 12 17C13.1046 17 14 17.8954 14 19Z" />
                         <path d="M19 21C20.1046 21 21 20.1046 21 19C21 17.8954 20.1046 17 19 17C17.8954 17 17 17.8954 17 19C17 20.1046 17.8954 21 19 21Z" />
                     </svg>
-                </button>
+                </Icon>
             </div>
             <div className="flex-none">
-                <button className="btn btn-circle w-12 h-12 btn-ghost hover:bg-gray-700 mr-2">
+                <Icon className="mr-2">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="inline-block h-8 w-8"
                     >
                         <FontAwesomeIcon icon={faCircleUser} />
                     </svg>
-                </button>
+                </Icon>
             </div>
         </div>
     );

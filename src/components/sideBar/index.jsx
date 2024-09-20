@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
     faHome,
     faCalendar,
@@ -6,27 +5,20 @@ import {
     faBoxArchive,
     faGear,
 } from "@fortawesome/free-solid-svg-icons";
-import Icon from "./icon";
+import Icon from "./sideIcon";
 import Separator from "./separator";
+import { useSideBar } from "@/contexts/sideBarContext";
 
 export default function SideBar() {
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    const handleMouseEnter = () => {
-        setIsExpanded(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsExpanded(false);
-    };
-
+    const { isExpanded, setExpandedTrue, setExpandedFalse } = useSideBar();
+    
     return (
         <div
             className={`absolute bg-base-100 transition-all border-r-[1px] border-gray-700 ${
                 isExpanded ? "w-[300px]" : "w-[76px]"
             }`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            onMouseEnter={setExpandedTrue}
+            onMouseLeave={setExpandedFalse}
             style={{ height: "calc(100vh - 65px)" }}
         >
             <ul className="pt-2">
