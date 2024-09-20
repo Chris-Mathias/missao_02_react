@@ -9,6 +9,7 @@ export default function Grid() {
                 title="3º Sistemas Embarcados"
                 subtitle="2024"
                 teacher="LORI RONALDO FLORES MACHADO FILHO"
+                dataEntrega="Quarta-Feira"
             />
             <CardComp
                 bg="https://gstatic.com/classroom/themes/img_read.jpg"
@@ -16,6 +17,7 @@ export default function Grid() {
                 title="4º Programação de Computadores"
                 subtitle="2024"
                 teacher="JOSÉ LUIZ GOMES DO AMARAL"
+                dataEntrega="terça-Feira"
             />
             <CardComp
                 bg="https://gstatic.com/classroom/themes/img_learnlanguage.jpg"
@@ -23,6 +25,7 @@ export default function Grid() {
                 title="5º Circuitos Digitais"
                 subtitle="2024"
                 teacher="KARLA ANA LIMA DE OLIVEIRA"
+                dataEntrega="quinta-Feira"
             />
             <CardComp
                 bg="https://gstatic.com/classroom/themes/img_read.jpg"
@@ -30,6 +33,7 @@ export default function Grid() {
                 title="6º Procrastinação 2"
                 subtitle="2024"
                 teacher="FERNANDO HENRIQUE DOS SANTOS"
+                dataEntrega="segunda-Feira"
             />
         </div>
     );
