@@ -38,7 +38,7 @@ export default function Card(props) {
                     {props.children}
                 </div>
                 <img
-                    className="h-[75px] w-[75px] mt-[-49.5px] rounded-full"
+                    className="h-[75px] w-[75px] mt-[-49.5px] rounded-full object-cover"
                     src={props.pfp}
                 />
             </div>

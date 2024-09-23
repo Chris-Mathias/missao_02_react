@@ -1,18 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useSideBar } from "@/contexts/sideBarContext";
+import { useModal } from "@/contexts/modalContext";
 import Icon from "@/components/icon";
 
 export default function NavBar() {
     const { toggleExpanded } = useSideBar();
+    const { toggleModal } = useModal();
 
     return (
         <div className="navbar bg-base-100 border-b-[1px] border-gray-700">
             <div className="flex-none">
-                <Icon
-                    onClick={toggleExpanded}
-                    className="mr-3 ml-1"
-                >
+                <Icon onClick={toggleExpanded} className="mr-3 ml-1">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -28,7 +27,7 @@ export default function NavBar() {
                     </svg>
                 </Icon>
             </div>
-            <div className="flex-none hover:text-green-600 hover:underline cursor-pointer">
+            <div className="flex-none hover:text-green-700 hover:underline cursor-pointer">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 579 500"
@@ -110,7 +109,7 @@ export default function NavBar() {
             </div>
             <div className="flex-1"></div>
             <div className="flex-none">
-                <Icon>
+                <Icon onClick={toggleModal}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="inline-block h-5 w-5"
