@@ -1,3 +1,4 @@
+import Activity from "./activity";
 import CardComp from "./card";
 
 export default function Grid() {
@@ -9,32 +10,37 @@ export default function Grid() {
                 title="3º Sistemas Embarcados"
                 subtitle="2024"
                 teacher="LORI RONALDO FLORES MACHADO FILHO"
-                dataEntrega="Quarta-Feira"
-            />
+            >
+                <Activity dataEntrega="Quarta-Feira" />
+            </CardComp>
             <CardComp
                 bg="https://gstatic.com/classroom/themes/img_read.jpg"
                 pfp="https://lh3.googleusercontent.com/a-/ALV-UjVc2D-uGNmOKQ8fcvWsSLoqlNIPGu6jq1SCFasBbm7x6q3XRtE=s75-c"
                 title="4º Programação de Computadores"
                 subtitle="2024"
                 teacher="JOSÉ LUIZ GOMES DO AMARAL"
-                dataEntrega="terça-Feira"
-            />
+            >
+                <Activity dataEntrega="Sexta-Feira" />
+            </CardComp>
             <CardComp
                 bg="https://gstatic.com/classroom/themes/img_learnlanguage.jpg"
                 pfp="https://lh3.googleusercontent.com/a-/ALV-UjUrvKLU86lIH5yftrczso7qim-AIh1HuuXFk4iNgtmwheJTP30=s75-c"
                 title="5º Circuitos Digitais"
                 subtitle="2024"
                 teacher="KARLA ANA LIMA DE OLIVEIRA"
-                dataEntrega="quinta-Feira"
-            />
+            >
+                <Activity dataEntrega="Quinta-Feira" />
+            </CardComp>
             <CardComp
                 bg="https://gstatic.com/classroom/themes/img_read.jpg"
                 pfp="https://lh3.googleusercontent.com/a/ACg8ocJfQbvGd_sqWMrlzlC2Dh8HydqgcpZF10LYzGH1eLM5-Amy8Q=s75-c-mo"
                 title="6º Procrastinação 2"
                 subtitle="2024"
                 teacher="FERNANDO HENRIQUE DOS SANTOS"
-                dataEntrega="segunda-Feira"
-            />
+            >
+                <Activity dataEntrega="Sexta-Feira" />
+                <Activity dataEntrega="Sexta-Feira" />
+            </CardComp>
         </div>
     );
 }
