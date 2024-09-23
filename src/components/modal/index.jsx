@@ -56,7 +56,7 @@ export default function Modal() {
             initial={{ scale: 1, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 1, opacity: 0 }}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-base-100 p-4 rounded-lg"
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-base-100 p-4 rounded-lg z-40"
         >
             <motion.div
                 initial={{ scale: 1, opacity: 0 }}
