@@ -19,7 +19,7 @@ export default function Card(props) {
     return (
         <div className="bg-base-100 w-75 h-73 border-[1px] border-gray-700 rounded-lg cursor-pointer hover:shadow-2xl">
             <div
-                className="flex flex-col relative h-[100px] pb-3 p-4 rounded-t-lg w-full bg-cover bg-center"
+                className="flex flex-col relative h-[100px] pb-3 p-4 rounded-t-lg w-full bg-cover bg-center bg-black/40 bg-blend-darken"
                 style={{ backgroundImage: `url("${props.bg}")` }}
             >
                 <div className="hover:underline">

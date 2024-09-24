@@ -43,7 +43,7 @@ export default function Modal() {
                             />
                         </div>
                         <form
-                            className="flex flex-col gap-4 mt-4"
+                            className="flex flex-col gap-2 mt-4"
                             onSubmit={handleSubmit}
                         >
                             <label className="flex flex-col">
