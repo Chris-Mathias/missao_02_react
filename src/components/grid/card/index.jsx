@@ -6,35 +6,16 @@ import {
     faEllipsisVertical,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useData } from "@/contexts/dataContext";
 
 export default function Card(props) {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const { handleDelete } = useData();
 
     const togglePopup = () => {
         setIsPopupOpen(!isPopupOpen);
     };
 
-    const handleDelete = async () => {
-        try {
-            const response = await fetch(
-                `http://localhost:3000/turmas/${props.id}`,
-                {
-                    method: "DELETE",
-                }
-            );
-
-            if (response.ok) {
-                const result = await response.json();
-                console.log("Recurso deletado:", result);
-                window.location.reload();
-            } else {
-                console.error("Erro ao deletar:", response.statusText);
-            }
-        } catch (error) {
-            console.error("Erro na requisição:", error);
-        }
-    };
-    
     return (
         <div className="bg-base-100 w-75 h-73 border-[1px] border-gray-700 rounded-lg cursor-pointer hover:shadow-2xl">
             <div
@@ -70,7 +51,7 @@ export default function Card(props) {
                 >
                     <div
                         className="flex text-base font-bold justify-center"
-                        onClick={handleDelete}
+                        onClick={() => handleDelete(props.id)}
                     >
                         Excluir
                     </div>

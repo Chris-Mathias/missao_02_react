@@ -1,53 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useModal } from "@/contexts/modalContext";
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useData } from "@/contexts/dataContext";
 
 export default function Modal() {
-    const [formData, setFormData] = useState({
-        title: "",
-        subtitle: "",
-        teacher: "",
-        pfp: "",
-        bg: "",
-    });
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        try {
-            const response = await fetch("http://localhost:3000/turmas", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                const result = await response.json();
-                console.log("Resposta do backend:", result);
-                window.location.reload();
-            } else {
-                console.error(
-                    "Erro na resposta do servidor:",
-                    response.statusText
-                );
-            }
-        } catch (error) {
-            console.error("Erro ao enviar dados:", error);
-        }
-    };
-
+    const { handleChange, handleSubmit, formData, setFormEmpty } = useData();
     const { isModalOpen, toggleModal } = useModal();
+
+    const toggleLocalModal = () => {
+        setFormEmpty();
+        toggleModal();
+    };
 
     if (!isModalOpen) return null;
 
@@ -75,7 +39,7 @@ export default function Modal() {
                             <FontAwesomeIcon
                                 icon={faXmark}
                                 className="cursor-pointer w-6 h-6"
-                                onClick={toggleModal}
+                                onClick={toggleLocalModal}
                             />
                         </div>
                         <form

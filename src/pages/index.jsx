@@ -8,9 +8,9 @@ import { ModalProvider } from "@/contexts/modalContext";
 
 export default function Home() {
     return (
-        <DataProvider>
-            <SideBarProvider>
-                <ModalProvider>
+        <SideBarProvider>
+            <ModalProvider>
+                <DataProvider>
                     <div className="h-screen bg-base-100">
                         <NavBarComp />
                         <div
@@ -22,8 +22,8 @@ export default function Home() {
                         </div>
                     </div>
                     <Modal />
-                </ModalProvider>
-            </SideBarProvider>
-        </DataProvider>
+                </DataProvider>
+            </ModalProvider>
+        </SideBarProvider>
     );
 }
