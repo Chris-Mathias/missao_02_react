@@ -19,24 +19,24 @@ export default function Card(props) {
     return (
         <div className="bg-base-100 w-75 h-73 border-[1px] border-gray-700 rounded-lg cursor-pointer hover:shadow-2xl">
             <div
-                className="flex flex-col relative h-[100px] pb-3 p-4 rounded-t-lg w-full bg-cover bg-center bg-black/40 bg-blend-darken"
+                className="flex flex-col relative h-[100px] pb-3 p-4 rounded-t-[7px] w-full bg-cover bg-center bg-black/40 bg-blend-darken"
                 style={{ backgroundImage: `url("${props.bg}")` }}
             >
-                <div className="hover:underline">
-                    <div className="flex justify-between w-full h-7">
-                        <h1 className="block text-xl text-bold text-ellipsis overflow-hidden whitespace-nowrap">
+                <div className="flex justify-between w-full h-7">
+                    <div className="hover:underline">
+                        <h1 className="block text-xl text-bold text-ellipsis overflow-hidden w-56 whitespace-nowrap">
                             {props.title}
                         </h1>
-                        <Icon className="m-[-12px]" onClick={togglePopup}>
-                            <FontAwesomeIcon
-                                icon={faEllipsisVertical}
-                                className="h-[18px]"
-                            />
-                        </Icon>
+                        <div className="block text-sm text-ellipsis overflow-hidden whitespace-nowrap w-[180px] h-5">
+                            {props.subtitle}
+                        </div>
                     </div>
-                    <div className="block text-sm text-ellipsis overflow-hidden whitespace-nowrap w-[180px] h-5">
-                        {props.subtitle}
-                    </div>
+                    <Icon className="m-[-12px]" onClick={togglePopup}>
+                        <FontAwesomeIcon
+                            icon={faEllipsisVertical}
+                            className="h-[18px]"
+                        />
+                    </Icon>
                 </div>
                 <div className="block mt-auto text-sm text-ellipsis overflow-hidden whitespace-nowrap w-[180px] h-5 hover:underline">
                     {props.teacher}
