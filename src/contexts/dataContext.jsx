@@ -69,6 +69,7 @@ export const DataProvider = ({ children }) => {
         }
 
         setCount(count + 1);
+        setFormEmpty();
         toggleModal();
     };
 
